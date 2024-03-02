@@ -52,7 +52,10 @@ namespace Projects
                                                 //   Console.WriteLine("amount charges: RM"+amt);
                                                   Console.WriteLine("Balance : RM"+balance);
                                                   Console.WriteLine("");
-                                                File.WriteAllText(logFile,"------,"+resultingDate+","+d+","+card+","+farechrge+","+amount+","+bal);
+                                                // File.WriteAllText(logFile,"------,"+resultingDate+","+d+","+card+","+farechrge+","+amount+","+bal);
+                                                using(StreamWriter sw= File.AppendText(logFile)){
+                                                  sw.WriteLine("------,"+resultingDate+","+d+","+card+","+farechrge+","+amount+","+bal);
+                                                }
                                                 int milliseconds = 100;
                                                 Thread.Sleep(milliseconds);
                                                 
